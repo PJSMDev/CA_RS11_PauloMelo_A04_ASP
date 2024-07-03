@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E02_EF6_Editora.Class
 {
@@ -23,8 +18,10 @@ namespace E02_EF6_Editora.Class
         [StringLength(13)]
         public string ISBN { get; set; }
 
+        /*
         [StringLength(50, ErrorMessage = "Limite de 50 caracteres.")]
         public string Tipo { get; set; }
+        */
 
         [Required]
         [Column(TypeName = "nvarchar")]

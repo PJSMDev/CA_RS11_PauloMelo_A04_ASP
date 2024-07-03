@@ -48,6 +48,36 @@ namespace E02_EF6_Editora
                 }
 
                 Utility.WriteMessage("\n");
+
+                Tipo tipo01 = new Tipo();
+
+                tipo01.LivroID = livro.LivroID;
+                tipo01.TipoLivro = "Drama";
+                db.Tipo.Add(tipo01);
+                db.SaveChanges();
+
+                Tipo tipo02 = new Tipo();
+
+                tipo02.LivroID = livro.LivroID;
+                tipo02.TipoLivro = "Comédia";
+                db.Tipo.Add(tipo02);
+                db.SaveChanges();
+
+                Tipo tipo03 = new Tipo();
+
+                tipo03.LivroID = livro.LivroID;
+                tipo03.TipoLivro = "Biografia";
+                db.Tipo.Add(tipo03);
+                db.SaveChanges();
+
+                var queryTipo = db.Tipo.Select(t => t).OrderBy(t => t.TipoID);
+
+                Utility.WriteTitle("Tipo");
+
+                foreach (var item in queryTipo)
+                {
+                    Utility.WriteMessage($"{item.TipoID}: {item.TipoLivro}", "\n", "\n");
+                }
             }
 
             Utility.TerminateConsole();

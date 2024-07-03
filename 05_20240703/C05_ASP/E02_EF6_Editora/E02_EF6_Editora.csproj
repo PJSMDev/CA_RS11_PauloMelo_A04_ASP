@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Class\Editora.cs" />
     <Compile Include="Class\Livro.cs" />
+    <Compile Include="Class\Tipo.cs" />
     <Compile Include="Context\EditoraContext.cs" />
     <Compile Include="Migrations\202407022019408_01_initial.cs" />
     <Compile Include="Migrations\202407022019408_01_initial.Designer.cs">
