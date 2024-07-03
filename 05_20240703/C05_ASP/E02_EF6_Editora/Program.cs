@@ -11,6 +11,7 @@ namespace E02_EF6_Editora
         {
             Utility.SetUnicodeConsole();
 
+
             using (var db = new EditoraContext())
             {
                 Editora editora = new Editora();
