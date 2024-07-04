@@ -9,6 +9,7 @@ namespace E02_EF6_Editora
     {
         static void Main(string[] args)
         {
+
             Utility.SetUnicodeConsole();
 
 
@@ -16,68 +17,61 @@ namespace E02_EF6_Editora
             {
                 Editora editora = new Editora();
 
-                editora.Nome = "editora 1";
+                editora.EditoraName = "editora 1";
                 db.Editora.Add(editora);
                 db.SaveChanges();
 
-                var queryEditora = db.Editora.Select(e => e).OrderBy(e => e.EditoraID);
+                var queryEditora = db.Editora.Select(e => e).OrderBy(e => e.EditoraId);
 
                 Utility.WriteTitle("Editora");
+                Utility.WriteMessage("\n");
 
                 foreach (var item in queryEditora)
                 {
-                    Utility.WriteMessage($"{item.EditoraID} - {item.Nome}", "", "\n");
+                    Utility.WriteMessage($"{item.EditoraId} - {item.EditoraName}", "", "\n");
                 }
 
+                Tipo tipo1 = new Tipo();
+                Tipo tipo2 = new Tipo();
+                Tipo tipo3 = new Tipo();
+
+                tipo1.Nome = "Romance";
+                tipo2.Nome = "Infantil";
+                tipo3.Nome = "Acção";
+
+                db.Tipo.Add(tipo1);
+                db.Tipo.Add(tipo2);
+                db.Tipo.Add(tipo3);
+
+                db.SaveChanges();
+
+                var queryTipo = db.Tipo.Select(t => t).OrderBy(t => t.TipoId);
+
+                Utility.WriteTitle("Tipo");
                 Utility.WriteMessage("\n");
+
+                foreach (var item in queryTipo)
+                {
+                    Utility.WriteMessage($"{item.TipoId} - {item.Nome}", "", "\n");
+                }
 
                 Livro livro = new Livro();
 
                 livro.ISBN = "9789899706637";
-                livro.Titulo = "Livro 1";
-                livro.EditoraID = editora.EditoraID;
+                livro.Título = "Livro 1";
+                livro.EditoraId = editora.EditoraId;
+                livro.TipoId = tipo1.TipoId;
                 db.Livro.Add(livro);
                 db.SaveChanges();
 
-                var queryLivro = db.Livro.Select(l => l).OrderBy(l => l.LivroID);
+                var queryLivro = db.Livro.Select(l => l).OrderBy(l => l.LivroId);
 
                 Utility.WriteTitle("Livro");
+                Utility.WriteMessage("\n");
 
                 foreach (var item in queryLivro)
                 {
-                    Utility.WriteMessage($"{item.LivroID}: Editora - {item.EditoraID}, ISBN - {item.ISBN}, {item.Titulo}", "\n", "\n");
-                }
-
-                Utility.WriteMessage("\n");
-
-                Tipo tipo01 = new Tipo();
-
-                tipo01.LivroID = livro.LivroID;
-                tipo01.TipoLivro = "Drama";
-                db.Tipo.Add(tipo01);
-                db.SaveChanges();
-
-                Tipo tipo02 = new Tipo();
-
-                tipo02.LivroID = livro.LivroID;
-                tipo02.TipoLivro = "Comédia";
-                db.Tipo.Add(tipo02);
-                db.SaveChanges();
-
-                Tipo tipo03 = new Tipo();
-
-                tipo03.LivroID = livro.LivroID;
-                tipo03.TipoLivro = "Biografia";
-                db.Tipo.Add(tipo03);
-                db.SaveChanges();
-
-                var queryTipo = db.Tipo.Select(t => t).OrderBy(t => t.TipoID);
-
-                Utility.WriteTitle("Tipo");
-
-                foreach (var item in queryTipo)
-                {
-                    Utility.WriteMessage($"{item.TipoID}: {item.TipoLivro}", "\n", "\n");
+                    Utility.WriteMessage($"{item.LivroId}: Editora - {item.EditoraId}, ISBN - {item.ISBN}, {item.Título}", "\n", "\n");
                 }
             }
 
