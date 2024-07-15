@@ -1,0 +1,92 @@
+------------------------------------------
+DATA ANNOTATIONS
+------------------------------------------
+
+https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-cs
+
+
+---------------------------
+Usings
+
+	System.ComponentModel
+	System.ComponentModel.DataAnnotations
+
+
+---------------------------
+Range
+	
+	Validar o valor num intervalo
+
+	[Range(1, 100)]
+    public int Quantity { get; set; }
+
+    [Range(typeof(decimal), "0.01", "1000.00")]
+    public decimal Price { get; set; }
+
+
+---------------------------
+RegularExpression
+	
+	Validar se o valor cumpre um padrão
+
+	[RegularExpression(@"\d{2}/\d{2}/\d{4}", ErrorMessage = "Invalid date (dd/MM/yyyy.")]
+    public string ModifiedDate { get; set; }
+
+	[RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", ErrorMessage = "Wrong email.")]
+    public string Email { get; set; }	
+
+
+---------------------------
+Required
+	
+	Valor obrigatório
+
+	[Required(ErrorMessage = "Name required.")]
+    public string Name { get; set; }
+
+    [Required(ErrorMessage = "Email required.")]
+    [RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", ErrorMessage = "Wrong email.")]
+    public string Email { get; set; }
+
+
+---------------------------
+Keys
+	Primary key e foreign key
+	
+	[Key]
+    public int CustomerId { get; set; }
+
+	[ForeignKey("CountryId")]
+    public Country CountryId { get; set; }
+
+
+---------------------------
+MaxLength
+	Definir o tamanho máximo do campo da tabela
+	
+	[MaxLength(100)]
+
+
+---------------------------
+StringLength
+	Definir os valores mínimo e máximo
+	
+	[StringLength(100)]
+	[StringLength(50, MinimumLength = 3)]
+
+
+---------------------------
+Column
+	Detalhar a coluna da tabela: nome, tipo de dados e tamanho
+
+	[Range(typeof(decimal), "0.01", "1000")]
+	[Column("UnitPrice", TypeName = "decimal(8, 2)")]
+    public decimal Price { get; set; }
+
+
+
+
+	[Required]
+    [StringLength(50)]
+	[Column(TypeName = "nvarchar(50)")]
+    public string City { get; set; }
