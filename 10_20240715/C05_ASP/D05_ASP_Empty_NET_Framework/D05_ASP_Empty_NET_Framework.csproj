@@ -77,6 +77,7 @@
     <Content Include="html\D03_CSS_External.html" />
     <Content Include="html\D04_CSS_LayoutFloat.html" />
     <Content Include="html\D05_CSS_LayoutPosition.html" />
+    <Content Include="html\D06_CSS_Tables.html" />
     <Content Include="media\audio.mp3" />
     <Content Include="media\imagem.jpeg" />
     <Content Include="media\imagem2.jpeg" />
