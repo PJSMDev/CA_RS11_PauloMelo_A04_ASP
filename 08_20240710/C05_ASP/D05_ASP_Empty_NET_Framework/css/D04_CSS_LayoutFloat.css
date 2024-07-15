@@ -1,0 +1,41 @@
+﻿/*
+@import reset.css
+*/
+
+#sectionContainer1 {
+    width: 100%;
+    height: 80%;
+}
+
+#article1 {
+    width: 50%;
+    height: 100%;
+    background-color: orange;
+    float: left;
+}
+
+#article2 {
+    width: 20%;
+    height: 100%;
+    background-color: red;
+    float: left;
+}
+
+#article3 {
+    width: 30%;
+    height: 100%;
+    background-color: blue;
+    float: left;
+}
+
+#sectionContainer2 {
+    width: 100%;
+    height: 20%;
+}
+
+#article4 {
+    width: 100%;
+    height: 100%;
+    background-color: purple;
+    float: none;
+}
