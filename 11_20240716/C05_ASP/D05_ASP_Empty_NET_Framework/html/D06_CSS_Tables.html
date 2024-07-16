@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="utf-8" />
+    <title>Tabelas</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            border: 1px solid black;
+            text-align: left;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .table1 {
+            border: 3px double black;
+        }
+
+        .table2 {
+            border: 3px solid blue;
+        }
+
+        .header {
+            background-color: orange;
+        }
+
+        .row {
+            background-color: aquamarine;
+        }
+
+        a {
+            color: red;
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: blue;
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_colspan2" target="_blank">W3Schools Tables</a>
+
+    <article>
+        <header>
+            <h1>Tabela 1</h1>
+        </header>
+        <section>
+            <table class="table1">
+                <tr>
+                    <th>Nro.</th>
+                    <th>Type</th>
+                    <th>Name</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Front-end</td>
+                    <td>HTML, CSS, JavaScript</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Back-end</td>
+                    <td>SQL Server, C#, ASP.NET</td>
+                </tr>
+            </table>
+        </section>
+    </article>
+
+    <br>
+    <br>
+    <br>
+
+    <article>
+        <header>
+            <h1>Tabela 2</h1>
+        </header>
+        <section>
+            <table class="table2">
+                <tr class="header">
+                    <th>Nro.</th>
+                    <th>Type</th>
+                    <th>Name</th>
+                </tr>
+                <tr class="row">
+                    <td>1</td>
+                    <td rowspan="3">Front-end</td>
+                    <td>HTML</td>
+                </tr>
+                <tr class="row">
+                    <td rowspan="2">2</td>
+                    <td>CSS</td>
+                </tr>
+                <tr class="row">
+                    <td>JavaScript</td>
+                </tr>
+                <tr class="row">
+                    <td rowspan="3">3</td>
+                    <td rowspan="3">Back-end</td>
+                    <td>SQL Server</td>
+                </tr>
+                <tr class="row">
+                    <td>C#</td>
+                </tr>
+                <tr class="row">
+                    <td>ASP.NET</td>
+                </tr>
+            </table>
+        </section>
+    </article>
+</body>
+</html>
