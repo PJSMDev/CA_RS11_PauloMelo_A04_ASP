@@ -1,0 +1,32 @@
+﻿@import "reset.css";
+
+.split {
+    width: 50%;
+    height: 100%;
+    position: fixed;
+}
+
+.left {
+    left: 0;
+    background-color: antiquewhite;
+}
+
+.right {
+    right: 0;
+    background-color: aquamarine;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Só afeta imagens afetadas pela classe centered (funciona como uma condição) */
+/* Pode ser substituida pelo uso de ids */
+/*
+.centered img {
+    width: 75%;
+}
+*/
