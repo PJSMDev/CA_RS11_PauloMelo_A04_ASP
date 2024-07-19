@@ -1,0 +1,40 @@
+﻿/*
+    CSS SELECTORS
+
+    Element
+    Class
+    ID
+    ...
+*/
+
+
+/* Elements */
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    color: chocolate;
+    background-color: aqua;
+}
+
+h1 {
+    color: crimson;
+}
+
+p {
+    color: coral;
+}
+
+/* Classes */
+.formatText {
+    font-family: 'Times New Roman';
+    font-size: 10px;
+}
+
+.formatTextColor {
+    color: red;
+}
+
+/* IDs */
+#p3 {
+    color:deeppink;
+}

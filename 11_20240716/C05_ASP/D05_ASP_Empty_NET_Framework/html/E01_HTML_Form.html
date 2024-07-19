@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="utf-8" />
+    <title>E01 - HTMLCSS Forms</title>
+    <style>
+        body {
+            margin-left: 2%;
+            margin-top: 2%;
+        }
+
+        #area01article01, #area02article01, #subarea01 {
+            border: 1px solid black;
+            padding: 20px 10px 10px;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        #area01label, #area02label, #subarea01label {
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: white;
+            margin: 0;
+            padding: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <section id="area00">
+        <article id="area00article01">
+            <form method="post" id="form01" action="">
+                <!-- action??? -->
+                <table>
+                    <tr>
+                        <td>
+                            <label for="fname">Name</label>
+                        </td>
+                        <td>
+                            <label for="lname">Last name</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="fname" name="fname" placeholder="Nome próprio" />
+                        </td>
+                        <td>
+                            <input type="text" id="lname" name="lname" value="SM" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </article>
+    </section>
+    <br />
+    <section id="area01">
+        <article id="area01article01">
+            <label id="area01label">Area 1</label>
+            <form method="post" id="form02" action="">
+                <!-- action??? -->
+                <input type="radio" id="it" name="area1" value="Tecnologias de Informação">
+                <label for="it">Tecnologias de Informação</label><br />
+                <input type="radio" id="ling" name="area1" value="Línguas" />
+                <label for="ling">Línguas</label>
+            </form>
+        </article>
+    </section>
+    <br />
+    <section id="area02">
+        <article id="area02article01">
+            <form method="post" id="form03" action="">
+                <!-- action??? -->
+                <label for="form03" id="area02label">Area 2</label>
+                <select id="form03" name="form03">
+                    <option value="rh" selected>RH</option>
+                    <option value="gestao" selected>Gestão</option>
+                    <option value="softskills">Softskills</option>
+                </select>
+            </form>
+        </article>
+    </section>
+    <section id="subarea01">
+        <article id="subarea01article01">
+            <form method="post" id="form04" action="">
+                <!-- action??? -->
+                <label for="form04" id="subarea01label">Subarea</label>
+                <input type="checkbox" id="sAOption1" name="sAOption1" value="Dev" />
+                <label for="sAOption1">Dev</label><br />
+                <input type="checkbox" id="sAOption2" name="sAOption2" value="DB" />
+                <label for="sAOption2">DB</label><br />
+                <input type="checkbox" id="sAOption3" name="sAOption3" value="Cloud" />
+                <label for="sAOption3">Cloud</label>
+            </form>
+        </article>
+    </section>
+    <br /><br />
+    <section id="buttons">
+        <article id="submit">
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+        </article>
+    </section>
+</body>
+</html>
